@@ -10,7 +10,7 @@ This script find all bachelor or diploma thesis at www.fit.vutbr.cz by
 ### Launch
 
 ```sh
-$ python thesisFinder.py [--autor autorName] [--name thesisName] [--supervisior superVisorName] [--keywords keywords]
+$ python thesisFinder.py [--autor autorName] [--name thesisName] [--supervisior superVisiorName] [--keywords keywords] [--type (BP|DP)]
 ```
 
 ### Output

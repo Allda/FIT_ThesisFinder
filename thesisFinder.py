@@ -1,6 +1,6 @@
 import urllib2
 from bs4 import BeautifulSoup
-
+import sys
 
 def find(autor="", supevisior="", name="", keyword="", type="BP"):
 	for i in range(1999,2013):
@@ -19,5 +19,29 @@ def find(autor="", supevisior="", name="", keyword="", type="BP"):
 			print "https://www.fit.vutbr.cz" + soupWork.findAll('a')[0]['href']
 			print "-----------------------"
 
+autor = ""
+supevisior = ""
+name = ""
+keyword = ""
+type = "BP"
 
-find(name="hdr")
+for i in range(0, len(sys.argv)):
+	option = sys.argv[i]
+	try:
+		if(option == "--autor"):
+			autor = sys.argv[i+1]
+		if(option == "--supevisior"):
+			supevisior = sys.argv[i+1]
+		if(option == "--name"):
+			name = sys.argv[i+1]
+		if(option == "--keywords"):
+			keyword = sys.argv[i+1]
+		if(option == "--type"):
+			type = sys.argv[i+1]
+	except:
+		sys.stderr.write("Bad arguments\n")
+		sys.exit()
+	
+
+
+find(autor,supevisior,name,keyword,type)
